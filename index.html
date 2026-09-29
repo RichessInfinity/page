@@ -39,7 +39,13 @@
     .local-info{padding:30px 0;background:#f7f7f7}.social-links a{display:inline-block;margin:5px 10px}.faq-item{margin:24px 0}
     .service_item{min-height:250px}.contact a,.footer a{color:#fff}.contact label{color:#fff}
     @media(max-width:767px){.service_item{min-height:0}}
-  </style>
+    .btn.btn-default.whatsapp-contact:hover,
+  .btn.btn-default.whatsapp-contact:focus-visible {
+    background-color: #25D366 !important;
+    border-color: #25D366 !important;
+    color: #fff !important;
+  }
+</style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -54,14 +60,49 @@
     ]
   }
   </script>
+
+<style>
+  .portfolio-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:30px}
+  .gallery-card{margin:0;overflow:hidden;background:#fff;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+  .gallery-card[hidden]{display:none!important}
+  .gallery-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+  .gallery-card a{display:block;overflow:hidden}
+  .gallery-card a:hover img,.gallery-card a:focus img{transform:scale(1.07)}
+  .gallery-card figcaption{padding:14px 16px;color:#222;font-weight:600}
+  .gallery-pagination{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:32px}
+  .gallery-pagination button{border:1px solid #ddd;background:#fff;color:#222;border-radius:4px;padding:10px 15px}
+  .gallery-pagination button[aria-current="page"]{background:#222;color:#fff}
+  .gallery-pagination button:disabled{opacity:.45;cursor:not-allowed}
+  .welcome-overlay{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.68)}
+  .welcome-overlay[hidden]{display:none}
+  .welcome-card{width:min(100%,760px);padding:20px;background:#fff;border-radius:14px;text-align:center;box-shadow:0 18px 60px rgba(0,0,0,.3)}
+  .welcome-card img{display:block;width:min(100%,640px);height:360px;object-fit:cover;margin:0 auto 18px;border-radius:8px}
+  .welcome-card h2{margin:8px 0;color:#222}.welcome-card p{color:#444}
+  .welcome-continue{display:inline-block;padding:13px 34px;border:0;border-radius:24px;background:#1479d0;color:#fff;font-weight:700}
+  .welcome-continue:hover,.welcome-continue:focus{background:#0d62ad;color:#fff}
+  body.welcome-open{overflow:hidden}
+  @media(max-width:767px){.portfolio-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.welcome-card img{height:auto;max-height:45vh}.gallery-pagination{flex-wrap:wrap}}
+  @media(max-width:480px){.portfolio-gallery{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.gallery-card img{transition:none}}
+</style>
+
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div class="welcome-overlay" id="welcome-overlay" role="dialog" aria-modal="true" aria-labelledby="welcome-title" hidden>
+    <div class="welcome-card">
+      <img src="assets/images/facade-richess-infinity.jpg" width="1024" height="1024" alt="Illustration fictive de la façade d’une imprimerie">
+      <h2 id="welcome-title">Bienvenue chez RICHESS INFINITY</h2>
+      <p>Impression sur tout support et communication visuelle, Abidjan.</p>
+      <button type="button" class="welcome-continue" id="welcome-continue">Continuer</button>
+    </div>
+  </div>
+
   <div class="culmn">
     <nav class="navbar navbar-default navbar-fixed white no-background bootsnav" aria-label="Navigation principale">
       <div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Ouvrir le menu"><span class="sr-only">Afficher la navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#accueil" aria-label="RICHESS INFINITY, accueil"><img src="assets/images/Richess_Infinity_logo.jpg" width="80px" height="80px" alt="RICHESS INFINITY"></a></div>
         <div class="collapse navbar-collapse" id="navbar-menu"><ul class="nav navbar-nav navbar-right">
-          <li><a href="#apropos">À propos</a></li><li><a href="#services">Services</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact / devis</a></li>
+          <li><a href="#apropos">À propos</a></li><li><a href="#services">Services</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact / Devis</a></li>
         </ul></div>
       </div>
     </nav>
@@ -69,33 +110,77 @@
       <section id="accueil" class="home bg-mega" aria-labelledby="titre-principal"><div class="overlay"></div><div class="container"><div class="row"><div class="main_home text-center"><div class="home_text">
         <h1 id="titre-principal" class="text-white">Impression et communication visuelle à Abidjan</h1>
         <p>RICHESS INFINITY accompagne les entreprises, associations et particuliers, de la création graphique à la fabrication de vos supports imprimés et personnalisés.</p>
-      </div><div class="home_btns m-top-40"><a href="#contact" class="btn btn-primary m-top-20">Demander un devis</a> <a href="https://wa.me/225787434464" class="btn btn-default m-top-20" rel="nofollow">Écrire sur WhatsApp</a></div></div></div></div></section>
-      <section id="apropos" class="about roomy-100"><div class="container"><div class="row"><div class="main_about"><div class="col-md-6"><div class="about_content"><h2>Votre partenaire impression à Abobo-Dokui</h2><div class="separator_auto"></div><p>RICHESS INFINITY donne forme à vos idées grâce à des solutions d’impression et de communication visuelle adaptées à votre besoin. Nous vous accompagnons dans le choix des formats, des supports et de la personnalisation, pour vos projets professionnels, associatifs ou personnels.</p><p>Installée à Abobo-Dokui, à Abidjan, l’entreprise accueille les demandes de proximité et étudie les projets provenant des autres quartiers de la ville.</p><a href="#services" class="btn btn-primary m-top-20">Découvrir nos services</a></div></div><div class="col-md-6"><div class="about_accordion"><h3>Un accompagnement adapté à votre projet</h3><p>Chaque demande est étudiée selon le support souhaité, le format, la quantité, le visuel fourni et le délai convenu. Contactez-nous pour vérifier la faisabilité et obtenir une proposition.</p></div></div></div></div></div></section>
+      </div><div class="home_btns m-top-40"><a href="#contact" class="btn btn-primary m-top-20">Demander un devis</a> <a href="https://wa.me/225787434464" target="_blank" class="btn btn-default m-top-20" rel="nofollow">Écrire sur WhatsApp</a></div></div></div></div></section>
+      <section id="apropos" class="about roomy-100"><div class="container"><div class="row"><div class="main_about"><div class="col-md-6"><div class="about_content"><h2>Votre partenaire d'impression tout support</h2><div class="separator_auto"></div><p>RICHESS INFINITY donne forme à vos idées grâce à des solutions d’impression et de communication visuelle adaptées à votre besoin. Nous vous accompagnons dans le choix des formats, des supports et de la personnalisation, pour vos projets professionnels, associatifs ou personnels.</p><p>Installée à Abobo-Dokui, à Abidjan, l’entreprise accueille les demandes de proximité et étudie les projets provenant des autres quartiers de la ville.</p><a href="#services" class="btn btn-primary m-top-20">Découvrir nos services</a></div></div><div class="col-md-6"><div class="about_accordion"><h3>Un accompagnement adapté à votre projet</h3><p>Chaque demande est étudiée selon le support souhaité, le format, la quantité, le visuel fourni et le délai convenu. Contactez-nous pour vérifier la faisabilité et obtenir une proposition.</p><img src="assets/images/Richess_Infinity_logo.jpg"></p></div></div></div></div></div></section>
       <section id="services" class="service"><div class="container"><div class="row"><div class="main_service roomy-100"><div class="col-md-8 col-md-offset-2"><div class="head_title text-center"><h2>Nos services d’impression et de communication</h2><div class="separator_auto"></div><p>Des supports cohérents avec votre identité et vos objectifs, conçus et réalisés à Abidjan selon les caractéristiques de chaque commande.</p></div></div>
         <div class="col-md-4"><article class="service_item"><i class="icofont icofont-print" aria-hidden="true"></i><h3 class="m-top-30">Impression numérique</h3><div class="separator_small"></div><p>Flyers, cartes de visite, dépliants, brochures, menus et documents de communication. Formats, papier et finitions à définir avec vous.</p></article></div>
         <div class="col-md-4"><article class="service_item"><i class="icofont icofont-imac" aria-hidden="true"></i><h3 class="m-top-30">Marquage textile</h3><div class="separator_small"></div><p>Personnalisation de T-shirts, polos et vêtements pour équipes, événements, associations et marques, selon le visuel et les quantités.</p></article></div>
         <div class="col-md-4"><article class="service_item"><i class="icofont icofont-light-bulb" aria-hidden="true"></i><h3 class="m-top-30">Conception graphique</h3><div class="separator_small"></div><p>Création ou adaptation de visuels pour vos campagnes, événements et supports. Les éléments et fichiers finaux sont convenus selon la prestation.</p></article></div>
         <div class="col-md-4"><article class="service_item"><i class="icofont icofont-image" aria-hidden="true"></i><h3 class="m-top-30">Flyers et affiches</h3><div class="separator_small"></div><p>Supports de promotion et d’information pour commerces, lancements, événements et activités locales.</p></article></div>
-        <div class="col-md-4"><article class="service_item"><i class="icofont icofont-building" aria-hidden="true"></i><h3 class="m-top-30">Bâches et panneaux</h3><div class="separator_small"></div><p>Communication grand format pour signaler un point de vente, promouvoir une activité ou habiller un événement. Dimensions à préciser au devis.</p></article></div>
+        <div class="col-md-4"><article class="service_item"><i class="icofont icofont-building" aria-hidden="true"></i><h3 class="m-top-30">Bâches et enseignes</h3><div class="separator_small"></div><p>Communication grand format pour signaler un point de vente, promouvoir une activité ou habiller un événement. Dimensions à préciser au devis.</p></article></div>
         <div class="col-md-4"><article class="service_item"><i class="icofont icofont-gift" aria-hidden="true"></i><h3 class="m-top-30">Supports personnalisés</h3><div class="separator_small"></div><p>Objets et supports personnalisables pour votre marque ou votre événement. Disponibilités, techniques et quantités à confirmer selon le projet.</p></article></div>
       </div></div></div></section>
       <section class="impress roomy-100"><div class="overlay"></div><div class="container"><div class="row"><div class="main_impress text-center"><div class="col-sm-8 col-sm-offset-2"><h2 class="text-white">Parlons de votre prochain projet</h2><p class="m-top-30 text-white">Partagez votre idée, les formats et quantités souhaités ainsi que votre échéance. Nous vous répondrons avec les prochaines étapes.</p><a href="#contact" class="btn btn-primary m-top-20">Préparer ma demande de devis</a></div></div></div></div></section>
-      <section id="realisations" class="portfolio lightbg"><div class="container"><div class="row"><div class="main_portfolio roomy-100"><div class="col-md-8 col-md-offset-2"><div class="head_title text-center"><h2>Exemples de supports réalisés</h2><div class="separator_auto"></div><p>Découvrez quelques familles de supports proposées par RICHESS INFINITY. Les images du template sont des visuels d’illustration et devront être remplacées par des réalisations réelles de l’entreprise avant publication.</p></div></div>
-        <div class="col-sm-4"><figure><img src="assets/images/Portfolio/1.jpg" class="img-responsive" alt="Exemple illustratif de support INFINITYé — à remplacer par une réalisation RICHESS INFINITY"><figcaption>Supports INFINITYés</figcaption></figure></div>
-        <div class="col-sm-4"><figure><img src="assets/images/Portfolio/2.jpg" class="img-responsive" alt="Exemple illustratif de création graphique — à remplacer par une réalisation RICHESS INFINITY"><figcaption>Création graphique</figcaption></figure></div>
-        <div class="col-sm-4"><figure><img src="assets/images/Portfolio/3.jpg" class="img-responsive" alt="Exemple illustratif de communication visuelle — à remplacer par une réalisation RICHESS INFINITY"><figcaption>Communication visuelle</figcaption></figure></div>
+      <section id="realisations" class="portfolio lightbg" aria-labelledby="realisations-title"><div class="container"><div class="row"><div class="main_portfolio roomy-100"><div class="col-md-8 col-md-offset-2"><div class="head_title text-center"><h2 id="realisations-title">Réalisations</h2><div class="separator_auto"></div><p>Découvrez des visuels fictifs illustrant les impressions et supports de communication proposés par RICHESS INFINITY. Ils servent d’exemples et ne représentent pas nécessairement des commandes déjà réalisées.</p></div></div>
+        <div class="col-xs-12"><div class="portfolio-gallery" id="portfolio-gallery" aria-live="polite">
+          <figure class="gallery-card" data-page="1">
+            <a href="assets/images/realisations/1.jpg" class="popup-img" aria-label="Agrandir : Flyer promotion imprimé">
+              <img src="assets/images/realisations/1.jpg" alt="Visuel fictif de flyer promotion imprimé, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">
+            </a><figcaption>Flyer promotion imprimé</figcaption>
+          </figure>
+          <figure class="gallery-card" data-page="1">
+            <a href="assets/images/realisations/2.jpg" class="popup-img" aria-label="Agrandir : Cartes de visite personnalisées">
+              <img src="assets/images/realisations/2.jpg" alt="Visuel fictif de cartes de visite personnalisées, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">
+            </a><figcaption>Cartes de visite personnalisées</figcaption>
+          </figure>
+          <figure class="gallery-card" data-page="1">
+            <a href="assets/images/realisations/3.jpg" class="popup-img" aria-label="Agrandir : Affiche pour événement">
+              <img src="assets/images/realisations/3.jpg" alt="Visuel fictif de affiche pour événement, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">
+            </a><figcaption>Affiche pour événement</figcaption>
+          </figure>
+          <figure class="gallery-card" data-page="1">
+            <a href="assets/images/realisations/4.jpg" class="popup-img" aria-label="Agrandir : Dépliant de présentation">
+              <img src="assets/images/realisations/4.jpg" alt="Visuel fictif de dépliant de présentation, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">
+            </a><figcaption>Dépliant de présentation</figcaption>
+          </figure>
+          <figure class="gallery-card" data-page="1">
+            <a href="assets/images/realisations/5.jpg" class="popup-img" aria-label="Agrandir : Bâche publicitaire grand format">
+              <img src="assets/images/realisations/5.jpg" alt="Visuel fictif de bâche publicitaire grand format, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">
+            </a><figcaption>Bâche publicitaire grand format</figcaption>
+          </figure>
+          <figure class="gallery-card" data-page="1">
+            <a href="assets/images/realisations/6.jpg" class="popup-img" aria-label="Agrandir : Panneau et enseigne">
+              <img src="assets/images/realisations/6.jpg" alt="Visuel fictif de panneau et enseigne, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">
+            </a><figcaption>Panneau et enseigne</figcaption>
+          </figure>
+          <figure class="gallery-card" data-page="1">
+                        <a href="https://imprimeriegenot.fr/wp-content/uploads/2023/08/Acceuil_77165_ImprimerieGenot-2-1024x683.jpeg" class="popup-img" aria-label="Agrandir : Flyer promotion imprimé">
+              <img src="https://imprimeriegenot.fr/wp-content/uploads/2023/08/Acceuil_77165_ImprimerieGenot-2-1024x683.jpeg" alt="Visuel fictif de flyer promotion imprimé, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">
+            </a><figcaption>T-shirt personnalisé en sérigraphie</figcaption>
+          </figure>
+          <figure class="gallery-card" data-page="1">
+                        <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTVtYRsBNXeXeembteCQ0JoDol_oedr5UL_PcOsOjsdK4pEfyeAXqSFjqM&s=10" class="popup-img" aria-label="Agrandir : Flyer promotion imprimé">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTVtYRsBNXeXeembteCQ0JoDol_oedr5UL_PcOsOjsdK4pEfyeAXqSFjqM&s=10" alt="Visuel fictif de flyer promotion imprimé, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">            </a><figcaption>Polo marqué aux couleurs d’une équipe</figcaption>
+          </figure>
+          <figure class="gallery-card" data-page="1">
+                        <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOgUoLkMO5BpNOeYXC3dxp8y2nWpuTZUtL9e6di-8d3IPqnIRm0u8SW3g&s=10" class="popup-img" aria-label="Agrandir : Flyer promotion imprimé">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOgUoLkMO5BpNOeYXC3dxp8y2nWpuTZUtL9e6di-8d3IPqnIRm0u8SW3g&s=10" alt="Visuel fictif de flyer promotion imprimé, exemple de réalisation RICHESS INFINITY" width="1024" height="1024" loading="lazy" decoding="async">
+            </a><figcaption>Brochure de communication</figcaption>
+          </figure>
+          
+        </div></div>
       </div></div></div></section>
       <section id="faq" class="about roomy-100"><div class="container"><div class="row"><div class="col-md-8 col-md-offset-2"><div class="head_title text-center"><h2>Questions fréquentes</h2><div class="separator_auto"></div></div>
-        <div class="faq-item"><h3>Quels services proposez-vous ?</h3><p>Nous proposons l’impression numérique, la sérigraphie et le marquage textile, la conception graphique, ainsi que des supports publicitaires comme les flyers, affiches, bâches et panneaux. La faisabilité dépend des spécifications et disponibilités.</p></div>
-        <div class="faq-item"><h3>Servez-vous les autres quartiers d’Abidjan ?</h3><p>Nous sommes basés à Abidjan Abobo-Dokui et étudions les demandes de l’ensemble d’Abidjan. Les modalités de retrait ou de livraison sont à confirmer lors de votre demande.</p></div>
+        <div class="faq-item"><h3>Quels services proposez-vous ?</h3><p>Nous proposons l’impression numérique, la sérigraphie et le marquage textile, la conception graphique, ainsi que des supports publicitaires comme les flyers, affiches, bâches et enseignes. La faisabilité dépend des spécifications et disponibilités.</p></div>
+        <div class="faq-item"><h3>Servez-vous toute l'étendue du territoire ?</h3><p>Nous sommes basés à Abidjan Abobo-Dokui et étudions les demandes de l’ensemble d’Abidjan et des villes de l'intérieur. Les modalités de retrait ou de livraison sont à confirmer lors de votre demande.</p></div>
         <div class="faq-item"><h3>Que faut-il préciser pour obtenir un devis ?</h3><p>Indiquez le type de support, le format ou les dimensions, la quantité, le visuel disponible et le délai souhaité. Si certains éléments ne sont pas encore définis, nous pourrons en discuter.</p></div>
         <div class="faq-item"><h3>Puis-je demander la création du visuel en plus de l’impression ?</h3><p>Oui, la conception ou l’adaptation graphique peut être étudiée en complément. Précisez-le dans votre demande afin que la proposition corresponde à votre besoin.</p></div>
       </div></div></div></section>
-      <section class="local-info" aria-label="Zone desservie"><div class="container text-center"><h2>RICHESS INFINITY à Abobo-Dokui, Abidjan</h2><p>Zone principale : Abobo-Dokui. Demandes étudiées depuis les autres communes et quartiers d’Abidjan, selon le service et les conditions convenues.</p><p><strong>Adresse :</strong> [ADRESSE EXACTE À REMPLACER AVANT PUBLICATION]</p><p>Un plan de localisation pourra être ajouté ici une fois l’adresse exacte vérifiée. Aucune position cartographique n’est publiée en attendant.</p></div></section>
-      <section id="contact" class="contact bg-mega fix"><div class="container"><div class="row"><div class="main_contact roomy-100 text-white"><div class="col-md-5"><h2 class="text-white">Contact et demande de devis</h2><div class="separator_small"></div><p>Expliquez-nous votre projet d’impression ou de communication visuelle. Les champs marqués d’un astérisque sont obligatoires.</p><p><strong>Téléphone :</strong> <a href="tel:0787434464">0787434464</a><br><strong>WhatsApp :</strong> <a href="https://wa.me/225787434464">0787434464</a><br><strong>Localisation :</strong> Abobo-Dokui, Abidjan, Côte d’Ivoire</p></div>
-        <div class="col-md-7"><form action="[URL-TRAITEMENT-FORMULAIRE-A-REMPLACER]" method="post" accept-charset="UTF-8"><div class="row"><div class="col-sm-6 form-group"><label for="nom">Nom *</label><input id="nom" name="name" type="text" class="form-control" autocomplete="name" required></div><div class="col-sm-6 form-group"><label for="email">E-mail *</label><input id="email" name="email" type="email" class="form-control" autocomplete="email" required></div><div class="col-sm-6 form-group"><label for="telephone">Téléphone</label><input id="telephone" name="telephone" type="tel" class="form-control" autocomplete="tel"></div><div class="col-sm-6 form-group"><label for="service">Service souhaité</label><select id="service" name="service" class="form-control"><option value="">Choisir (facultatif)</option><option>Impression numérique</option><option>Sérigraphie / marquage textile</option><option>Conception graphique</option><option>Flyers / affiches</option><option>Bâches / panneaux publicitaires</option><option>Supports personnalisés</option><option>Autre demande</option></select></div><div class="col-sm-12 form-group"><label for="message">Détails du projet *</label><textarea id="message" name="message" rows="5" class="form-control" required placeholder="Support, format, quantité, visuel disponible et délai souhaité"></textarea></div><div class="col-sm-12 form-group"><button type="submit" class="btn btn-primary">Envoyer ma demande</button> <a class="btn btn-default" href="https://wa.me/225787434464">Contacter sur WhatsApp</a></div></div></form></div></div></div></div></section>
+      <section class="local-info" aria-label="Zone desservie"><div class="container text-center"><h2>RICHESS INFINITY à Abobo-Dokui, Abidjan</h2><p>Zone principale : Abobo-Dokui. Demandes étudiées depuis les autres communes et quartiers d’Abidjan, selon le service et les conditions convenues.</p><p><strong>Adresse :</strong> Quartier de la Abobo-Dokoui, 68</p><p>Un plan de localisation pourra être ajouté ici une fois l’adresse exacte vérifiée. Aucune position cartographique n’est publiée en attendant.</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0778667320224!2d-4.003326626502915!3d5.40510933515168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc195a90f075367%3A0x4756348290163f8b!2sSNL%20Beauty!5e0!3m2!1sfr!2sci!4v1790588504323!5m2!1sfr!2sci" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></section>
+      <section id="contact" class="contact bg-mega fix"><div class="container"><div class="row"><div class="main_contact roomy-100 text-white"><div class="col-md-5"><h2 class="text-white">Contact et demande de devis</h2><div class="separator_small"></div><p>Expliquez-nous votre projet d’impression ou de communication visuelle. Les champs marqués d’un astérisque sont obligatoires.</p><p><strong>Téléphone :</strong> 0787434464<br><strong>Localisation :</strong> Abobo-Dokui, Abidjan, Côte d’Ivoire</p></div>
+        <div class="col-md-7"><form action="[URL-TRAITEMENT-FORMULAIRE-A-REMPLACER]" method="post" accept-charset="UTF-8"><div class="row"><div class="col-sm-6 form-group"><label for="nom">Nom *</label><input id="nom" name="name" type="text" class="form-control" autocomplete="name" required></div><div class="col-sm-6 form-group"><label for="email">E-mail *</label><input id="email" name="email" type="email" class="form-control" autocomplete="email" required></div><div class="col-sm-6 form-group"><label for="telephone">Téléphone *</label><input id="telephone" name="telephone" type="tel" class="form-control" autocomplete="tel"></div><div class="col-sm-6 form-group"><label for="service">Service souhaité</label><select id="service" name="service" class="form-control"><option value="">Choisir (facultatif)</option><option>Impression numérique</option><option>Sérigraphie / marquage textile</option><option>Conception graphique</option><option>Flyers / affiches</option><option>Bâches / panneaux publicitaires</option><option>Supports personnalisés</option><option>Autre demande</option></select></div><div class="col-sm-12 form-group"><label for="message">Détails du projet *</label><textarea id="message" name="message" rows="5" class="form-control" required placeholder="Support, format, quantité, visuel disponible et délai souhaité"></textarea></div><div class="col-sm-12 form-group"><button type="submit" class="btn btn-primary">Envoyer ma demande</button> <br><br><a class="btn btn-default whatsapp-contact" href="https://wa.me/225787434464" target="_blank">Envoyer un message sur WhatsApp</a></div></div></form></div></div></div></div></section>
     </main>
-    <footer id="footer" class="footer bg-black"><div class="container"><div class="row"><div class="col-sm-6"><img src="assets/images/Richess_Infinity_logo.jpg" width="80px" height="80px" alt="RICHESS INFINITY"><p>Impression et communication visuelle à Abobo-Dokui, Abidjan.</p><p><a href="#contact">Demander un devis</a> · <a href="#services">Nos services</a> · <a href="#faq">Questions fréquentes</a></p></div><div class="col-sm-6"><h3 class="text-white">Suivez RICHESS INFINITY</h3><ul class="list-inline social-links"><li><a href="" aria-label="Facebook de RICHESS INFINITY"><img src="assets/images/sociaux/Facebook_logo.png" width="30px" height="30px"></a></li><li><a href="[URL-TIKTOK-A-REMPLACER]" aria-label="TikTok de RICHESS INFINITY"><img src="assets/images/sociaux/tiktok-logo.png" width="35px" height="35px"></a></li><li><a href="[URL-INSTAGRAM-A-REMPLACER]" aria-label="Instagram de RICHESS INFINITY"><img src="assets/images/sociaux/Instagram_icon.png" width="'0px" height="30px"></a></li></ul></div></div><div class="row"><div class="col-xs-12 text-center"><p>© <span id="annee">2026</span> RICHESS INFINITY. Tous droits réservés.</p></div></div></div></footer>
+    <footer id="footer" class="footer bg-black"><div class="container"><div class="row"><div class="col-sm-6"><img src="assets/images/Richess_Infinity_logo.jpg" width="80px" height="80px" alt="RICHESS INFINITY"><p>Impression et communication visuelle à Abobo-Dokui, Abidjan.</p><p><a href="#contact">Demander un devis</a> · <a href="#services">Nos services</a> · <a href="#faq">Questions fréquentes</a></p></div><div class="col-sm-6"><h3 class="text-white">Suivez RICHESS INFINITY</h3><ul class="list-inline social-links"><li><a href="https://www.facebook.com/richessinfinity" target="_blank" aria-label="Facebook de RICHESS INFINITY"><img src="assets/images/sociaux/Facebook_logo.png" width="30px" height="30px"></a></li><li><a href="https://www.tiktok.com/@richessinfinity" target="_blank" aria-label="TikTok de RICHESS INFINITY"><img src="assets/images/sociaux/tiktok-logo.png" width="35px" height="35px"></a></li><li><a href="https://www.instagram.com/richessinfinity/" target="_blank" aria-label="Instagram de RICHESS INFINITY"><img src="assets/images/sociaux/Instagram_icon.png" width="'0px" height="30px"></a></li></ul></div></div><div class="row"><div class="col-xs-12 text-center"><p>© <span id="annee">2026</span> RICHESS INFINITY. Tous droits réservés.</p></div></div></div></footer>
   </div>
   <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" defer></script>
   <script src="assets/js/vendor/jquery-1.11.2.min.js" defer></script>
@@ -109,5 +194,44 @@
   <script src="assets/js/plugins.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script>document.getElementById('annee').textContent = new Date().getFullYear();</script>
+
+  <script>
+    (function(){
+      const cards = Array.from(document.querySelectorAll('.gallery-card'));
+      const pageButtons = Array.from(document.querySelectorAll('[data-gallery-page]'));
+      const prev = document.getElementById('gallery-prev');
+      const next = document.getElementById('gallery-next');
+      const status = document.getElementById('gallery-status');
+      let page = 1;
+      function showPage(number){
+        page = number;
+        cards.forEach(card => { card.hidden = Number(card.dataset.page) !== page; });
+        pageButtons.forEach(button => {
+          if (Number(button.dataset.galleryPage) === page) button.setAttribute('aria-current','page');
+          else button.removeAttribute('aria-current');
+        });
+        prev.disabled = page === 1; next.disabled = page === 2;
+        status.textContent = 'Page ' + page + ' sur 2';
+      }
+      pageButtons.forEach(button => button.addEventListener('click', () => showPage(Number(button.dataset.galleryPage))));
+      prev.addEventListener('click', () => showPage(Math.max(1,page-1)));
+      next.addEventListener('click', () => showPage(Math.min(2,page+1)));
+      showPage(1);
+
+      const overlay = document.getElementById('welcome-overlay');
+      const continueButton = document.getElementById('welcome-continue');
+      try {
+        if (!localStorage.getItem('richessInfinityWelcomeSeen')) {
+          overlay.hidden = false; document.body.classList.add('welcome-open'); continueButton.focus();
+        }
+        continueButton.addEventListener('click', function(){
+          overlay.hidden = true; document.body.classList.remove('welcome-open');
+          try { localStorage.setItem('richessInfinityWelcomeSeen','1'); } catch(e) {}
+        });
+      } catch(e) { overlay.hidden = false; document.body.classList.add('welcome-open'); }
+    })();
+  </script>
+
 </body>
 </html>
+
